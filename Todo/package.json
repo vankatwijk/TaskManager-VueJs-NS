@@ -14,7 +14,7 @@
       "version": "6.5.0"
     }
   },
-  "dependencies": { 
+  "dependencies": {
     "vuex": "^3.3.0",
     "@vue/devtools": "^5.3.3",
     "nativescript-socketio": "^3.3.1",

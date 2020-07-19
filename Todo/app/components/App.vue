@@ -1,49 +1,45 @@
 <template>
-    <Page>
-        <ActionBar title="Welcome to NativeScript-Vue!" android:flat="true"/>
-        <TabView android:tabBackgroundColor="#53ba82"
-                 android:tabTextColor="#c4ffdf"
-                 android:selectedTabTextColor="#ffffff"
-                 androidSelectedTabHighlightColor="#ffffff">
-            <TabViewItem title="Tab 1">
-                <GridLayout columns="*" rows="*">
-                    <Label class="message" :text="msg" col="0" row="0"/>
-                </GridLayout>
-            </TabViewItem>
-            <TabViewItem title="Tab 2">
-                <GridLayout columns="*" rows="*">
-                    <Label class="message" text="Tab 2 Content" col="0" row="0"/>
-                </GridLayout>
-            </TabViewItem>
-            <TabViewItem title="Tab 3">
-                <GridLayout columns="*" rows="*">
-                    <Label class="message" text="Tab 3 Content" col="0" row="0"/>
-                </GridLayout>
-            </TabViewItem>
-        </TabView>
+    <Page class="page" actionBarHidden="true">
+
+        <GridLayout columns="*" rows="200, *, auto"
+            backgroundColor="lightgray">
+
+            <Label text="Task" class="title" row="0" backgroundColor="green" />
+            <Label text="Label 5" row="1" backgroundColor="orange" />
+            <StackLayout orientation="horizontal" row="2" backgroundColor="purple">
+                <Label text="Label 1" width="*" height="50"
+                    backgroundColor="red" />
+                <Label text="Label 2" width="*" height="50"
+                    backgroundColor="green" />
+                <Label text="Label 3" width="*" height="50"
+                    backgroundColor="blue" />
+                <Label text="Label 4" width="*" height="50"
+                    backgroundColor="yellow" />
+            </StackLayout>
+        </GridLayout>
     </Page>
 </template>
 
-<script >
-  export default {
-    data() {
-      return {
-        msg: 'Hello World!'
-      }
-    }
-  }
+<script>
+    export default {
+        data() {
+            return {};
+        }
+    };
 </script>
 
 <style scoped>
-    ActionBar {
-        background-color: #53ba82;
-        color: #ffffff;
+    .home-panel {
+        vertical-align: center;
+        font-size: 20;
+        margin: 15;
     }
 
-    .message {
-        vertical-align: center;
-        text-align: center;
-        font-size: 20;
-        color: #333333;
+    .description-label {
+        margin-bottom: 15;
+    }
+    .title {
+        padding:50;
+        font-size:50;
     }
 </style>

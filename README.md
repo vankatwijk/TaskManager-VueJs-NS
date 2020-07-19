@@ -24,6 +24,7 @@ The instructions for installing this project on your local machine with pre-requ
 ## Based on
 
 * **Cuberto** - [Task Manager design - dribbble](https://dribbble.com/shots/4841953-Redesign-of-Task-Manager)
+* **Hendrikus van Katwijk** - [init Todo code](https://github.com/vankatwijk/Todo-VueJs)
 
 ## License
 
