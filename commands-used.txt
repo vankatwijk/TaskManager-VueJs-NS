@@ -1,0 +1,12 @@
+#setup the initial project
+vue init nativescript-vue/vue-cli-template <project name>
+
+#useful commands
+   vue-cli · Generated "Todo".
+   vue-cli · cd Todo
+   vue-cli · npm install
+   vue-cli · tns preview
+   vue-cli · # or
+   vue-cli · tns run
+   tns run android
+   tns platform add android

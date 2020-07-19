@@ -1,0 +1,9 @@
+# JetBrains project files
+Todo/.idea
+
+# NPM
+Todo/node_modules
+
+# NativeScript application
+Todo/hooks
+Todo/platforms
