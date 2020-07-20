@@ -12,8 +12,10 @@
 
                 <StackLayout orientation="vertical"
                     backgroundColor="lightgray">
-                    <Label v-for="x in 50" :text="`Label ${x}`"
-                        class="listItem" />
+
+                        <TodoItem v-for="x in 50" v-bind:todo="x"
+                            v-on:del-todo="" />
+
                 </StackLayout>
 
             </ScrollView>
@@ -37,7 +39,11 @@
 </template>
 
 <script>
+    import TodoItem from "./TodoItem";
     export default {
+        components: {
+            TodoItem
+        },
         methods: {
             onButtonTap() {
                 console.log("Button was pressed");
@@ -73,12 +79,5 @@
         font-size: 50;
         background-color: red;
         align: right;
-    }
-
-    .listItem {
-        padding: 20;
-        padding-left: 50;
-        font-size: 20;
-        background-color: white;
     }
 </style>
