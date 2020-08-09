@@ -1,14 +1,20 @@
 <template>
 
-    <StackLayout class='todo-item'
-        v-bind:class="{'is-complete':todo.completed}">
+    <StackLayout class='todo-item' v-bind:class="{'is-complete':task.completed}">
 
         <GridLayout columns="100,*,100" backgroundColor="white">
 
-            <check-box :checked="true" @checkedChange="isChecked = $event.value"  col="0"/>
-            <Label text="todo" width="*" height="50" col="1"
-                backgroundColor="green" />
-            <button @click="" class="del" col="2">x</button>
+            <check-box :checked="task.completed" @checkedChange="markComplete($event.value)"  col="0"/>
+            <StackLayout width="*" height="50" col="1" >
+                <StackLayout>
+                     <Label :text="task.title" backgroundColor="green" />
+                </StackLayout>
+                <StackLayout>
+                     <Label :text="task.datetime" backgroundColor="green" />
+                </StackLayout>
+            </StackLayout>
+           
+            <button class="del" col="2">x</button>
         </GridLayout>
     </StackLayout>
 
@@ -17,10 +23,10 @@
 <script>
     export default {
         name: "TodoItem",
-        props: ["todo"],
+        props: ["task"],
         methods: {
-            markComplete() {
-                this.todo.completed = !this.todo.completed;
+            markComplete(state) {
+                this.task.completed = state;
             }
         }
     };
@@ -30,7 +36,7 @@
     .todo-item {
         background: #f4f4f4;
         padding: 10px;
-        border-bottom: 1px #cc dotted;
+        border-bottom: 1px #ccc dotted;
     }
 
     .is-complete {

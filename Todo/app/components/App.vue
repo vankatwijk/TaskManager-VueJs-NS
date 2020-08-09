@@ -10,10 +10,9 @@
                 backgroundColor="orange">
 
 
-                <StackLayout orientation="vertical"
-                    backgroundColor="lightgray">
+                <StackLayout orientation="vertical" backgroundColor="lightgray">
 
-                        <TodoItem v-for="x in 50" :key="'todo'+x" v-bind:todo="x" v-on:del-todo="dd" />
+                        <TodoItem v-for="(task,index) in tasks" :key="'todo'+index" v-bind:task="task"  />
 
                 </StackLayout>
 
@@ -29,7 +28,7 @@
                     backgroundColor="green" />
                 <Label text="p3" width="*" height="50" col="2"
                     backgroundColor="blue" />
-                <Button text="+" class="addButton" @tap="onAddButtonTap"
+                <Button text="+" class="addButton" @tap="addtask()"
                     col="3" />
             </GridLayout>
 
@@ -46,11 +45,59 @@
         methods: {
             onButtonTap() {
                 console.log("Button was pressed");
+            },
+            addtask(){
+                console.log(' hdfi sdfn dfhoidhsf ');
+                const dialogs = require('tns-core-modules/ui/dialogs')
+
+                prompt({
+                title: "Email Prompt",
+                message: "Provide your email address:",
+                okButtonText: "OK",
+                cancelButtonText: "Cancel",
+                defaultText: "name@domain.com",
+                inputType: dialogs.inputType.email
+                }).then(result => {
+                console.log(`Dialog result: ${result.result}, text: ${result.text}`)
+                });
             }
         },
 
         data() {
-            return {};
+            return {
+                tasks:[
+                    {
+                        "title":"eat",
+                        "completed":true,
+                        "datetime":""
+                    },
+                    {
+                        "title":"drink",
+                        "completed":false,
+                        "datetime":""
+                    },
+                    {
+                        "title":"dutch",
+                        "completed":false,
+                        "datetime":""
+                    },
+                    {
+                        "title":"sleep",
+                        "completed":true,
+                        "datetime":""
+                    },
+                    {
+                        "title":"read",
+                        "completed":true,
+                        "datetime":""
+                    },
+                    {
+                        "title":"teeth",
+                        "completed":true,
+                        "datetime":""
+                    },
+                ]
+            };
         }
     };
 </script>
