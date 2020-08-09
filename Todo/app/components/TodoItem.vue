@@ -4,8 +4,8 @@
         v-bind:class="{'is-complete':todo.completed}">
 
         <GridLayout columns="100,*,100" backgroundColor="white">
-            <Switch checked="true" @checkedChange="markComplete" col="0">
-            </Switch>
+
+            <check-box :checked="true" @checkedChange="isChecked = $event.value"  col="0"/>
             <Label text="todo" width="*" height="50" col="1"
                 backgroundColor="green" />
             <button @click="" class="del" col="2">x</button>

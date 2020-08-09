@@ -13,8 +13,7 @@
                 <StackLayout orientation="vertical"
                     backgroundColor="lightgray">
 
-                        <TodoItem v-for="x in 50" v-bind:todo="x"
-                            v-on:del-todo="" />
+                        <TodoItem v-for="x in 50" :key="'todo'+x" v-bind:todo="x" v-on:del-todo="dd" />
 
                 </StackLayout>
 

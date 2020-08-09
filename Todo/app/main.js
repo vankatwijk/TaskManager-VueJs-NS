@@ -10,6 +10,16 @@ import store from './store'
 // Prints Vue logs when --env.production is *NOT* set while building
 Vue.config.silent = (TNS_ENV === 'production')
 
+Vue.registerElement(
+  'CheckBox',
+  () => require('@nstudio/nativescript-checkbox').CheckBox,
+  {
+    model: {
+      prop: 'checked',
+      event: 'checkedChange',
+    },
+  }
+);
 
 new Vue({
   store,
