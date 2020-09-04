@@ -1,6 +1,6 @@
 # todo
 
-> simple todo app
+> taskmanagement app
 
 ## Usage
 
